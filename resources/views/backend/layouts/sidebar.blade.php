@@ -16,30 +16,15 @@
                                 <a class="nav-link active" href="/"><i class="fa fa-fw fa-user-circle"></i>Dashboard <span class="badge badge-success">6</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-2" aria-controls="submenu-2"><i class="fa fa-fw fa-rocket"></i>UI Elements</a>
+                                <a class="nav-link" href="" data-toggle="collapse" aria-expanded="false" data-target="#submenu-2" aria-controls="submenu-2"><i class="fa fa-fw fa-rocket"></i>Services</a>
                                 <div id="submenu-2" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="pages/cards.html">Cards <span class="badge badge-secondary">New</span></a>
+                                            <a class="nav-link" href="{{URL('backend.services')}}">Service List<span class="badge badge-secondary">New</span></a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="pages/general.html">General</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="pages/carousel.html">Carousel</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="pages/listgroup.html">List Group</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="pages/typography.html">Typography</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="pages/accordions.html">Accordions</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="pages/tabs.html">Tabs</a>
-                                        </li>
+                                            <a class="nav-link" href="pages/general.html">Add Services</a>
+                                        </li>                                        
                                     </ul>
                                 </div>
                             </li>
