@@ -23,7 +23,7 @@
                                             <a class="nav-link" href="{{route('services')}}">Service List<span class="badge badge-secondary">New</span></a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="pages/general.html">Add Services</a>
+                                            <a class="nav-link" href="{{route('create')}}">Add Services</a>
                                         </li>                                        
                                     </ul>
                                 </div>

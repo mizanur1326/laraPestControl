@@ -3,8 +3,9 @@
 namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
-use App\Models\Service;
+use App\Models\backend\Service;
 use Illuminate\Http\Request;
+
 
 class ServiceController extends Controller
 {
@@ -23,7 +24,7 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.services.create');
     }
 
     /**
@@ -31,7 +32,30 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validate = $request->validate([
+            'name' => 'required | min:4',
+            'description' => 'required | min:6',
+            'image' => 'mimes:jpg,jpeg,png',
+        ]);
+
+        $filename = time(). "." . $request->image->extension();
+
+        if($validate){
+            $data = [
+                'name' => $request->name,
+                'description' => $request->description,
+                'image'=> $filename,
+            ];
+
+
+            $model = new Service();       
+            if($model->create($data)){
+            $request->image->move('images/services/', $filename);    
+            return redirect('services')->with('msg', 'Service Added Successfully');
+          }
+
+
+        }
     }
 
     /**

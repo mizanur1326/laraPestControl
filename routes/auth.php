@@ -59,6 +59,15 @@ Route::middleware('auth')->group(function () {
                 ->name('logout');
 
                 // Services
-    Route::get('Services', [ServiceController::class, 'index'])
+    Route::get('services', [ServiceController::class, 'index'])
                 ->name('services');
+
+    Route::get('create', [ServiceController::class, 'create'])
+                ->name('create');
+
+    Route::post('services/store', [ServiceController::class, 'store'])
+                ->name('services.store');
+
+                // Packeges
+    
 });

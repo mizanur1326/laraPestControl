@@ -17,22 +17,22 @@ class ServiceSeeder extends Seeder
         DB::table('services')->insert([
             'name' => 'Mosquito control',
             'description' => 'Lorem ipsum dolor sit amet consectetur adipisc elit sed.',
-            'image' => 'images/services/mosquito.jpg'
+            'image' => 'mosquito.jpg'
         ]);
         DB::table('services')->insert([
             'name' => 'Ant control',
             'description' => 'Lorem ipsum dolor sit amet consectetur adipisc elit sed.',
-            'image' => 'images/services/ant.jpg'
+            'image' => 'ant.jpg'
         ]);
         DB::table('services')->insert([
             'name' => 'Flies control',
             'description' => 'Lorem ipsum dolor sit amet consectetur adipisc elit sed.',
-            'image' => 'images/services/flies.jpg'
+            'image' => 'flies.jpg'
         ]);
         DB::table('services')->insert([
             'name' => 'Rodent control',
             'description' => 'Lorem ipsum dolor sit amet consectetur adipisc elit sed.',
-            'image' => 'images/services/rodent.jpg'
+            'image' => 'rodent.jpg'
         ]);
     }
 }

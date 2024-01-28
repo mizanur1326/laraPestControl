@@ -35,7 +35,7 @@
             <!-- ============================================================== -->
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="card">
-                    <h5 class="card-header">Basic Table</h5>
+                    <h5 class="card-header">Services List</h5>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-striped table-bordered first">
@@ -53,7 +53,7 @@
                                         <td>{{$ser->id}}</td>
                                         <td>{{$ser->name}}</td>
                                         <td>{{$ser->description}}</td>
-                                        <td><img src="{{$ser->image}}" width="100" alt=""></td>
+                                        <td><img src="{{ 'images/services/' . $ser->image}}" width="100" alt=""></td>
                                     </tr>
                                     @endforeach
                                 </tbody>
