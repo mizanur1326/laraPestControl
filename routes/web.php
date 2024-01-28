@@ -26,6 +26,10 @@ Route::get('/services', function () {
     return view('backend.services.index');
 })->middleware(['auth', 'verified'])->name('services');
 
+Route::get('/createservice', function () {
+    return view('backend.services.create');
+})->middleware(['auth', 'verified'])->name('create');
+
 
 
 Route::middleware('auth')->group(function () {
