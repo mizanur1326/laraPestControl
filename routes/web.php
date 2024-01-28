@@ -22,9 +22,6 @@ Route::get('/dashboard', function () {
     return view('backend.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/services', function () {
-    return view('backend.services.index');
-})->middleware(['auth', 'verified'])->name('services');
 
 Route::get('/createservice', function () {
     return view('backend.services.create');

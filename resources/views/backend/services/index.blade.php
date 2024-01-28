@@ -44,7 +44,7 @@
                                         <th>ID</th>
                                         <th>Name</th>
                                         <th>Description</th>
-                                        <th>Logo</th>
+                                        <th>Image</th>
                                     </tr>
                                 </thead>
                                 <tbody>     
@@ -52,10 +52,8 @@
                                     <tr>
                                         <td>{{$ser->id}}</td>
                                         <td>{{$ser->name}}</td>
-                                        <td>Edinburgh</td>
-                                        <td>51</td>
-                                        <td>2008/11/13</td>
-                                        <td>$183,000</td>
+                                        <td>{{$ser->description}}</td>
+                                        <td><img src="{{$ser->image}}" width="100" alt=""></td>
                                     </tr>
                                     @endforeach
                                 </tbody>
