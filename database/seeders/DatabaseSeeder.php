@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $this->call(BlogSeeder::class);
-        $this->call(PackageSeeder::class);
+        $this->call(PriceSeeder::class);
         $this->call(ServiceSeeder::class);
         $this->call(TeamSeeder::class);
         $this->call(TestimonialSeeder::class);

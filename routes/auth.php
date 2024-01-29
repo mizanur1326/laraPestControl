@@ -9,8 +9,8 @@ use App\Http\Controllers\Auth\PasswordController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
+use App\Http\Controllers\backend\PriceController;
 use App\Http\Controllers\backend\ServiceController;
-use App\Http\Controllers\PackegesController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {
@@ -70,12 +70,12 @@ Route::middleware('auth')->group(function () {
                 ->name('services.store');
 
                 // Packeges
-    Route::get('packegesPrice', [PackegesController::class, 'index'])
-                ->name('packeges.index');
+    Route::get('prices', [PriceController::class, 'index'])
+                ->name('prices.index');
 
-    Route::get('packeges/create', [PackegesController::class, 'create'])
-                ->name('packeges/create');
+    Route::get('prices/create', [PriceController::class, 'create'])
+                ->name('prices/create');
 
-    Route::post('packeges/store', [PackegesController::class, 'store'])
-                ->name('packeges.store');
+    Route::post('prices/store', [PriceController::class, 'store'])
+                ->name('prices.store');
 });

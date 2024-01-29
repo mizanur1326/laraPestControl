@@ -1,6 +1,6 @@
 @extends('backend.layouts.app')
 
-@section('title', 'Packege List')
+@section('title', 'Prices List')
 
 @section('content')
 
@@ -43,17 +43,17 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>Name</th>
-                                        <th>Description</th>
-                                        <th>Image</th>
+                                        <th>Price</th>
+                                        <th>Description</th>                                        
                                     </tr>
                                 </thead>
                                 <tbody>     
-                                    @foreach($services as $ser)                               
+                                    @foreach($prices as $price)                               
                                     <tr>
-                                        {{-- <td>{{$ser->id}}</td>
-                                        <td>{{$ser->name}}</td>
-                                        <td>{{$ser->description}}</td>
-                                        <td><img src="{{ 'images/services/' . $ser->image}}" width="100" alt=""></td> --}}
+                                        <td>{{$price->id}}</td>
+                                        <td>{{$price->name}}</td>
+                                        <td>{{$price->price}}</td>
+                                        <td>{{$price->description}}</td>                                        
                                     </tr>
                                     @endforeach
                                 </tbody>
