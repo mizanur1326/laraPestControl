@@ -10,6 +10,7 @@ use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\backend\ServiceController;
+use App\Http\Controllers\PackegesController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {
@@ -60,14 +61,21 @@ Route::middleware('auth')->group(function () {
 
                 // Services
     Route::get('services', [ServiceController::class, 'index'])
-                ->name('services');
+                ->name('services.index');
 
-    Route::get('create', [ServiceController::class, 'create'])
-                ->name('create');
+    Route::get('services/create', [ServiceController::class, 'create'])
+                ->name('services.create');
 
     Route::post('services/store', [ServiceController::class, 'store'])
                 ->name('services.store');
 
                 // Packeges
-    
+    Route::get('packegesPrice', [PackegesController::class, 'index'])
+                ->name('packeges.index');
+
+    Route::get('packeges/create', [PackegesController::class, 'create'])
+                ->name('packeges/create');
+
+    Route::post('packeges/store', [PackegesController::class, 'store'])
+                ->name('packeges.store');
 });

@@ -20,10 +20,10 @@
                                 <div id="submenu-2" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{route('services')}}">Service List<span class="badge badge-secondary">New</span></a>
+                                            <a class="nav-link" href="{{url('services')}}">Service List<span class="badge badge-secondary">New</span></a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{route('create')}}">Add Services</a>
+                                            <a class="nav-link" href="{{url('services/create')}}">Add Services</a>
                                         </li>                                        
                                     </ul>
                                 </div>
