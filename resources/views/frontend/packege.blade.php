@@ -43,8 +43,8 @@
                         <p><i class="fa fa-check text-success me-2"></i>Re-Service at No-Charge</p>
                         <p><i class="fa fa-times text-danger me-2"></i>Termite Control</p>
                         <p><i class="fa fa-times text-danger me-2"></i>Mosquito Reduction</p>
-                        <button type="button" class="btn btn-primary border-0 rounded-pill px-4 py-3 mt-3">Get Started</button>
-                        <button class="btn btn-danger"><a href="{{route('add.to.cart', $price->id)}}">Add To Cart</a> </button>
+                        <button type="button" class="btn btn-primary border-0 rounded-pill px-4 py-3 mt-3"><a class="text-dark " href="{{route('add.to.cart', $price->id)}}">Add To Cart</a></button>
+                        {{-- <button class="btn btn-danger"><a href="{{route('add.to.cart', $price->id)}}">Add To Cart</a> </button> --}}
                     </div>
                 </div>
             </div>
