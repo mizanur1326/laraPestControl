@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\frontend\PriceController;
+use App\Http\Controllers\frontend\FrontendController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -27,7 +27,7 @@ Route::get('about', function () {
 //     return view('frontend.services');
 // });
 
-Route::get('ourservices', [PriceController::class, 'service'])->name('service.index');
+Route::get('ourservices', [FrontendController::class, 'services'])->name('service.index');
 
 Route::get('blog', function () {
     return view('frontend.blog');
@@ -37,7 +37,7 @@ Route::get('blog', function () {
 //     return view('frontend.packege');
 // });
 
-Route::get('packege', [PriceController::class, 'index'])->name('packege.index');
+Route::get('packege', [FrontendController::class, 'packeges'])->name('packege.index');
 
 Route::get('contact', function () {
     return view('frontend.contact');

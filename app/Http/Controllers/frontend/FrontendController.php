@@ -7,20 +7,17 @@ use App\Models\backend\Price;
 use App\Models\backend\Service;
 use Illuminate\Http\Request;
 
-
-class PriceController extends Controller
+class FrontendController extends Controller
 {
-    public function index()
+    public function packeges()
     {
         $data['packeges'] = Price::all();
         return view('frontend.packege', $data);
     }
 
-    public function service()
+    public function services()
     {
         $data['services'] = Service::all();
         return view('frontend.services', $data);
     }
-
-
 }
