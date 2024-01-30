@@ -60,4 +60,12 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+
+// Cart
+Route::get('cart', [FrontendController::class, 'cart'])->name('cart');
+Route::get('add-to-cart/{id}', [FrontendController::class, 'addToCart'])->name('add.to.cart');
+Route::patch('update-cart', [FrontendController::class, 'update'])->name('update.cart');
+Route::delete('remove-from-cart', [FrontendController::class, 'remove'])->name('remove.from.cart');
+
+
 require __DIR__.'/auth.php';
