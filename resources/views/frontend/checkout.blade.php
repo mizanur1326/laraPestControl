@@ -65,31 +65,44 @@
                                     <thead>
                                         <tr>
                                             <th>Product</th>
+                                            <th>Price</th>
+                                            <th>Quantity</th>
                                             <th>Total</th>
                                         </tr>
                                     </thead>
 
                                     <tbody>
                                         @php $subtotal = 0 @endphp
+                                        @php $subquantity = 0 @endphp
                                         @if(session('cart'))
                                         @foreach(session('cart') as $id => $details)
                                         <tr>
                                             <td style="font-weight: 700">{{ $details['name'] }}</td>
                                             <td style="font-weight: 700">{{ $details['price'] }}</td>
-                                            @php $subtotal += $details['price']; @endphp
+                                            <td style="font-weight: 700">{{ $details['quantity'] }}</td>
+                                            <td style="font-weight: 700">{{ $details['price']  * $details['quantity'] }}</td>
+                                            @php $subquantity +=  $details['quantity']; @endphp
+                                            @php $subtotal += ($details['price'] * $details['quantity']); @endphp
                                         </tr>
                                         @endforeach
                                         <tr class="summary-subtotal">
                                             <td>Subtotal:</td>
+                                            <td></td>
+                                            <td></td>                                            
                                             <td>${{ $subtotal }}</td>
                                         </tr>
                                         <tr>
                                             <td>Shipping:</td>
+                                            <td></td>
+                                            <td></td>
                                             <td>Free shipping</td>
                                         </tr>
                                         <tr class="summary-total">
                                             <td style="font-weight: 700">Total:</td>
+                                            <td></td>
+                                            <td style="font-weight: 700">Q- {{$subquantity}}</td>
                                             <td style="font-weight: 700">${{ $subtotal }}</td>
+                                        <input type="hidden" name="sub_quantity" value="{{ $subquantity }}">
                                         <input type="hidden" name="sub_total" value="{{ $subtotal }}">
                                         <input type="hidden" name="total_amount" value="{{ $subtotal }}">
                                         </tr>
