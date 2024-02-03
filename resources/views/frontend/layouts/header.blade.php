@@ -59,7 +59,13 @@
                         </div>
                     </div> --}}
                     <a href="{{url('contact')}}" class="nav-item nav-link">Contact</a>
-                    <a href="{{url('cart')}}" class="nav-item nav-link"><i class="fa-solid fa-cart-shopping" style="color: #fffb00;"><span class="badge bg-danger text-white rounded-pill bg-primary p-2 ms-2">{{ is_array(session()->get('cart')) ? count(session()->get('cart')) : 0 }}</span></i></a>
+                    <a href="{{url('cart')}}" class="nav-item nav-link">
+                        <i class="fa-solid fa-cart-shopping" style="color: #fffb00;">
+                            <span class="badge bg-danger text-white rounded-pill bg-primary p-2 ms-2">
+                                {{ is_array(session()->get('cart')) ? count(session()->get('cart')) : 0 }}
+                            </span>
+                        </i>
+                    </a>
                 </div>
             </div>
         </nav>
