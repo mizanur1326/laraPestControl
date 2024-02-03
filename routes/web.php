@@ -67,5 +67,9 @@ Route::get('add-to-cart/{id}', [FrontendController::class, 'addToCart'])->name('
 Route::patch('update-cart', [FrontendController::class, 'update'])->name('update.cart');
 Route::delete('remove-from-cart', [FrontendController::class, 'remove'])->name('remove.from.cart');
 
+// Checkout
+Route::get('checkout', [FrontendController::class, 'checkout'])->name('checkout.page');    
+Route::post('order', [FrontendController::class, 'order'])->name('checkout.order');
+
 
 require __DIR__.'/auth.php';

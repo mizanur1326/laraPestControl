@@ -46,7 +46,7 @@
                     <a href="/" class="nav-item nav-link">Home</a>
                     <a href="{{url('about')}}" class="nav-item nav-link">About</a>
                     <a href="{{url('ourservices')}}" class="nav-item nav-link">Services</a>
-                    <a href="{{url('blog')}}" class="nav-item nav-link">Blog</a>                    
+                    <a href="{{url('blog')}}" class="nav-item nav-link">Blog</a> 
                     <a href="{{url('packege')}}" class="nav-item nav-link">Packeges</a>                    
                     {{-- <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
@@ -59,6 +59,7 @@
                         </div>
                     </div> --}}
                     <a href="{{url('contact')}}" class="nav-item nav-link">Contact</a>
+
                     <a href="{{url('cart')}}" class="nav-item nav-link">
                         <i class="fa-solid fa-cart-shopping" style="color: #fffb00;">
                             <span class="badge bg-danger text-white rounded-pill bg-primary p-2 ms-2">
@@ -66,6 +67,8 @@
                             </span>
                         </i>
                     </a>
+
+
                 </div>
             </div>
         </nav>
