@@ -121,8 +121,8 @@ class FrontendController extends Controller
          
          print_r(session('cart'));
 
-         dd($order_data);
-        //  return redirect('');
+        //  dd($order_data);
+        return redirect('packege')->with('msg', 'Thank You for Order');
 
 
         //  $carts = session('cart');
