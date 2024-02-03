@@ -102,7 +102,7 @@
                                             <td></td>
                                             <td style="font-weight: 700">Q- {{$subquantity}}</td>
                                             <td style="font-weight: 700">${{ $subtotal }}</td>
-                                        <input type="hidden" name="sub_quantity" value="{{ $subquantity }}">
+                                        <input type="hidden" name="quantity" value="{{ $subquantity }}">
                                         <input type="hidden" name="sub_total" value="{{ $subtotal }}">
                                         <input type="hidden" name="total_amount" value="{{ $subtotal }}">
                                         </tr>

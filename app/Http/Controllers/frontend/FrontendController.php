@@ -112,14 +112,14 @@ class FrontendController extends Controller
         $order = new Order();
          $order_data = $request->all();
          $order_data['order_number'] = "ORD" . " " . rand(5, 5000);
-         $order_data['quantity'] = 1;
+        //  $order_data['quantity'] = 1;
          $order_data['country'] = "Bangladesh";
         //  print_r($order_data) ; 
         $order->create($order_data);
         $request->session()->forget('cart');
 
          
-         print_r(session('cart'));
+        //  print_r(session('cart'));
 
         //  dd($order_data);
         return redirect('packege')->with('msg', 'Thank You for Order');
