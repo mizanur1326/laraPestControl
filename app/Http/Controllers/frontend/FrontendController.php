@@ -121,7 +121,7 @@ class FrontendController extends Controller
          
          print_r(session('cart'));
 
-        //  dd($order_data);
+         dd($order_data);
         //  return redirect('');
 
 
