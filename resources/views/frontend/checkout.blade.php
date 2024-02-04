@@ -34,7 +34,7 @@
                                 <div class="row">
                                     <div class="col-sm-12">
                                         <label>Name *</label>
-                                        <input type="text" class="form-control" name="name">
+                                        <input type="text" class="form-control" name="customerName">
                                     </div>
 
                                 </div>

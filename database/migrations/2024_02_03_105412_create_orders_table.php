@@ -23,7 +23,7 @@ return new class extends Migration
             // $table->string('payment_method');
             // $table->string('payment_status');
             // $table->string('status');
-            $table->string('name');
+            $table->string('customerName');
             $table->string('email');
             $table->string('phone');
             $table->string('country');
