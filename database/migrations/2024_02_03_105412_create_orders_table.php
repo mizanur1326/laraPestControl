@@ -19,6 +19,7 @@ return new class extends Migration
             // $table->bigInteger('shipping_id');
             // $table->string('coupon');
             $table->double('total_amount');
+            $table->string('productName');
             $table->integer('quantity');
             // $table->string('payment_method');
             // $table->string('payment_status');
