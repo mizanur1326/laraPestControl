@@ -9,8 +9,10 @@ use App\Http\Controllers\Auth\PasswordController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
+use App\Http\Controllers\backend\OrderControllerBackend;
 use App\Http\Controllers\backend\PriceController;
 use App\Http\Controllers\backend\ServiceController;
+use App\Http\Controllers\frontend\FrontendController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {
@@ -78,4 +80,10 @@ Route::middleware('auth')->group(function () {
 
     Route::post('prices/store', [PriceController::class, 'store'])
                 ->name('prices.store');
+
+
+    // Orders
+    Route::get('orders', [OrderControllerBackend::class, 'index']);
+
+
 });
