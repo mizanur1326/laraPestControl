@@ -73,7 +73,7 @@
 
                                     <tbody>
                                         @php $subtotal = 0 @endphp
-                                        @php $subquantity = 0 @endphp
+                                        @php $subquantity = 0 @endphp                                        
                                         @if(session('cart'))
                                         @foreach(session('cart') as $id => $details)
                                         <tr>
@@ -81,6 +81,7 @@
                                             <td style="font-weight: 700">{{ $details['price'] }}</td>
                                             <td style="font-weight: 700">{{ $details['quantity'] }}</td>
                                             <td style="font-weight: 700">{{ $details['price']  * $details['quantity'] }}</td>
+                                            @php $productName =  $details['name']; @endphp
                                             @php $subquantity +=  $details['quantity']; @endphp
                                             @php $subtotal += ($details['price'] * $details['quantity']); @endphp
                                         </tr>
@@ -97,21 +98,17 @@
                                             <td style="font-weight: 700" colspan="2">Total:</td>
                                             <td style="font-weight: 700">Q- {{$subquantity}}</td>
                                             <td style="font-weight: 700">${{ $subtotal }}</td>
+                                        <input type="hidden" name="productName" value="{{ $productName }}">
                                         <input type="hidden" name="quantity" value="{{ $subquantity }}">
                                         <input type="hidden" name="sub_total" value="{{ $subtotal }}">
                                         <input type="hidden" name="total_amount" value="{{ $subtotal }}">
                                         </tr>
-                                        
                                         @endif
                                     </tbody>
-                                </table>
-
-
-
-                                
+                                </table>                                
                             </div><!-- End .summary -->
                         </aside><!-- End .col-lg-3 -->
-                    </div><!-- End .row -->
+                    </div><!-- End .row -->              
                 </form>
 
 </div>
