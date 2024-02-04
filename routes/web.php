@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\backend\DashboardController;
 use App\Http\Controllers\frontend\FrontendController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -43,9 +44,12 @@ Route::get('contact', function () {
     return view('frontend.contact');
 });
 
-Route::get('/dashboard', function () {
-    return view('backend.dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+
+// Route::get('/dashboard', function () {
+//     return view('backend.dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 
 Route::get('/createservice', function () {
