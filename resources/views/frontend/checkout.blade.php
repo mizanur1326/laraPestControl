@@ -86,20 +86,15 @@
                                         </tr>
                                         @endforeach
                                         <tr class="summary-subtotal">
-                                            <td>Subtotal:</td>
-                                            <td></td>
-                                            <td></td>                                            
+                                            <td colspan="3">Subtotal:</td>                                         
                                             <td>${{ $subtotal }}</td>
                                         </tr>
                                         <tr>
-                                            <td>Shipping:</td>
-                                            <td></td>
-                                            <td></td>
+                                            <td colspan="3">Shipping:</td>
                                             <td>Free shipping</td>
                                         </tr>
                                         <tr class="summary-total">
-                                            <td style="font-weight: 700">Total:</td>
-                                            <td></td>
+                                            <td style="font-weight: 700" colspan="2">Total:</td>
                                             <td style="font-weight: 700">Q- {{$subquantity}}</td>
                                             <td style="font-weight: 700">${{ $subtotal }}</td>
                                         <input type="hidden" name="quantity" value="{{ $subquantity }}">
