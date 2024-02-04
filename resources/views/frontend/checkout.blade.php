@@ -29,7 +29,7 @@
             <form action="{{route('checkout.order')}}" method="POST">
                     @csrf
                     <div class="row">
-                        <div class="col-lg-9">
+                        <div class="col-lg-6">
                             <h2 class="checkout-title">Billing Details</h2><!-- End .checkout-title -->
                                 <div class="row">
                                     <div class="col-sm-12">
@@ -57,7 +57,7 @@
                                 </button>
 
                         </div><!-- End .col-lg-9 -->
-                        <aside class="col-lg-3">
+                        <aside class="col-lg-6">
                             <div class="summary">
                                 <h3 class="summary-title">Your Order</h3><!-- End .summary-title -->
 
