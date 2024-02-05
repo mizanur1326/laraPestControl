@@ -35,7 +35,12 @@
             <!-- ============================================================== -->
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="card">
-                    <h5 class="card-header">Services List</h5>
+                    <h5 class="card-header">Packeges List</h5>
+                    @if (session('msg'))
+                        <div class="alert alert-success">
+                                {{session('msg')}}
+                        </div>
+                    @endif
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-striped table-bordered first">

@@ -74,7 +74,7 @@ Route::delete('remove-from-cart', [FrontendController::class, 'remove'])->name('
 // Checkout
 Route::get('checkout', [FrontendController::class, 'checkout'])->name('checkout.page');    
 Route::post('order', [FrontendController::class, 'order'])->name('checkout.order');
-Route::get('reports', [DashboardController::class, 'reports'])->name('checkout.order');
+Route::get('reports', [DashboardController::class, 'reports'])->name('reports');
 
 
 require __DIR__.'/auth.php';

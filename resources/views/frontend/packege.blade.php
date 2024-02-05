@@ -1,8 +1,21 @@
+@if (session('success'))
+<div class="alert alert-success">
+{{session('success')}}
+</div>
+@endif
+
+@if (session('msg'))
+<div class="alert alert-success">
+{{session('msg')}}
+</div>
+@endif
+
 @extends('frontend.layouts.app')
 
 @section('title', 'PestKit - Packeges Page')
 
 @section('content')
+
 
 <!-- Page Header Start -->
 <div class="container-fluid page-header py-5">
@@ -17,6 +30,8 @@
     </div>
 </div>
 <!-- Page Header End -->
+
+
 
 
 
@@ -37,7 +52,7 @@
                     <div class="px-4 py-5 text-center bg-primary pricing-label mb-2">
                         <h1 class="mb-0">{{$price->price}}<span class="text-secondary fs-5 fw-normal">/mo</span></h1>
                         {{-- <p class="mb-0">Basic Pest Control</p> --}}
-                    </div>
+                    </div>                   
                     <div class="p-4 text-center fs-5">
                         <p><i class="fa fa-check text-success me-2"></i>Household pests Control</p>
                         <p><i class="fa fa-check text-success me-2"></i>Rodent Control</p>
