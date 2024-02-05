@@ -13,7 +13,7 @@
                                 Menu
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link active" href="/dashboard"><i class="fa fa-fw fa-user-circle"></i>Dashboard <span class="badge badge-success">6</span></a>
+                                <a class="nav-link" href="/dashboard"><i class="fa fa-fw fa-user-circle"></i>Dashboard <span class="badge badge-success">6</span></a>
                             </li>
                             <li class="nav-item ">
                                 <a class="nav-link" href="{{url('orders')}}"><i class="fa fa-fw fa-user-circle"></i>Orders <span class="badge badge-success">6</span></a>
@@ -43,6 +43,9 @@
                                         </li>                                          
                                     </ul>
                                 </div>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="{{url('reports')}}"><i class="fa fa-fw fa-user-circle"></i>Reports</a>
                             </li>
                             {{-- <li class="nav-item ">
                                 <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4"><i class="fab fa-fw fa-wpforms"></i>Forms</a>

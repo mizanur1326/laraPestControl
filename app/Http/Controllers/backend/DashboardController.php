@@ -38,7 +38,32 @@ class DashboardController extends Controller
 
         
 
-        return view('backend.dashboard', compact('totalOrder', 'totalRevenue', 'totalAllUser'));
+        return view('backend.dashboard', compact('totalOrder', 'totalRevenue', 'totalAllUser', 'todayOrder'));
+    }
+
+    public function reports()
+    {
+       // $totalProducts = Product::count();
+        // $totalCategories = Category::count();
+
+
+        $totalAllUser = User::count();
+        // $totalUser = User::where('role_as', '0')->count();
+        // $totalAdmin = User::where('role_as', '1')->count();
+
+
+        $todayDate = Carbon::now()->format('d-m-Y');
+        $thisMonth = Carbon::now()->format('m');
+        $thisYear = Carbon::now()->format('Y');
+
+        $totalOrder = Order::count();
+        $todayOrder = Order::whereDate('created_at', $todayDate)->count();
+        $thisMonthOrder = Order::whereMonth('created_at', $thisMonth)->count();
+        $todayOrder = Order::whereYear('created_at', $thisYear)->count();
+
+        $totalRevenue = DB::table('orders')->sum('total_amount');
+
+        return view('backend.reports', compact('totalOrder', 'totalRevenue', 'totalAllUser', 'todayOrder', 'thisMonthOrder'));
     }
 
     /**
