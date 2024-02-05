@@ -13,13 +13,13 @@
                                 Menu
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="/dashboard"><i class="fa fa-fw fa-user-circle"></i>Dashboard <span class="badge badge-success">6</span></a>
+                                <a class="nav-link {{ request()->is('dashboard') ? 'active' : '' }}" href="/dashboard"><i class="fa fa-fw fa-user-circle"></i>Dashboard <span class="badge badge-success">6</span></a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="{{url('orders')}}"><i class="fa fa-fw fa-user-circle"></i>Orders <span class="badge badge-success">6</span></a>
+                                <a class="nav-link {{ request()->is('orders') ? 'active' : '' }}" href="{{url('orders')}}"><i class="fa fa-fw fa-user-circle"></i>Orders <span class="badge badge-success">6</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="" data-toggle="collapse" aria-expanded="false" data-target="#submenu-2" aria-controls="submenu-2"><i class="fa fa-fw fa-rocket"></i>Services</a>
+                                <a class="nav-link {{ request()->is('services') ? 'active' : '' }}" href="" data-toggle="collapse" aria-expanded="false" data-target="#submenu-2" aria-controls="submenu-2"><i class="fa fa-fw fa-rocket"></i>Services</a>
                                 <div id="submenu-2" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
@@ -32,7 +32,7 @@
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-3" aria-controls="submenu-3"><i class="fas fa-fw fa-chart-pie"></i>Packeges</a>
+                                <a class="nav-link {{ request()->is('prices') ? 'active' : '' }}" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-3" aria-controls="submenu-3"><i class="fas fa-fw fa-chart-pie"></i>Packeges</a>
                                 <div id="submenu-3" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
@@ -44,8 +44,8 @@
                                     </ul>
                                 </div>
                             </li>
-                            <li class="nav-item ">
-                                <a class="nav-link" href="{{url('reports')}}"><i class="fa fa-fw fa-user-circle"></i>Reports</a>
+                            <li class="nav-item">
+                                <a class="nav-link {{ request()->is('reports') ? 'active' : '' }}" href="{{url('reports')}}"><i class="fa fa-fw fa-user-circle"></i>Reports</a>
                             </li>
                             {{-- <li class="nav-item ">
                                 <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4"><i class="fab fa-fw fa-wpforms"></i>Forms</a>
