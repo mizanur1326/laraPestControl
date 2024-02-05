@@ -64,4 +64,14 @@ class OrderControllerBackend extends Controller
     {
         //
     }
+
+    public function status($id)
+    {
+        
+        $status = Order::find($id);
+        $status->status = 1;
+        $status->update();
+        return redirect()->back();
+        
+    }
 }

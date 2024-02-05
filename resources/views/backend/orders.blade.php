@@ -38,18 +38,19 @@
                                     <td>{{$order->customerName}}</td>                                    
                                     <td>{{$order->phone}}</td>                                    
                                     <td>{{$order->address}}</td>                                    
-                                    <td>{{$order->status}}</td>                                    
+                                     
+                                    <td>
+                                        @if (!$order->status==0)
+                                        <button class="btn btn-success">Completed</button>
+                                        @else
+                                        <form action="{{route('order.status',$order->id)}}" method="post">
+                                          @csrf
+                                          <button class="btn btn-warning" type="submit">Received</button>
+                                        </form>
+                                        @endif
+                                    </td>                                   
                                 </tr>
-                            @endforeach
-                            
-                            {{-- <tr>
-                                <td>Donna Snider</td>
-                                <td>Customer Support</td>
-                                <td>New York</td>
-                                <td>27</td>
-                                <td>2011/01/25</td>
-                                <td>$112,000</td>
-                            </tr> --}}
+                            @endforeach                              
                         </tbody>
                     </table>
                 </div>

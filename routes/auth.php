@@ -84,6 +84,7 @@ Route::middleware('auth')->group(function () {
 
     // Orders
     Route::get('orders', [OrderControllerBackend::class, 'index']);
+    Route::post('order/status/{id}', [OrderControllerBackend::class, 'status'])->name('order.status');
 
 
 });

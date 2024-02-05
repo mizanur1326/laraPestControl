@@ -30,6 +30,7 @@ return new class extends Migration
             $table->string('country');
             // $table->string('post_code');
             $table->string('address');
+            $table->boolean('status')->default(0);
             $table->timestamps();
         });
     }
