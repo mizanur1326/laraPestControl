@@ -27,7 +27,6 @@ class PriceController extends Controller
             'description' => 'required | min:6',
         ]);
 
-
         if($validate){
             $data = [
                 'name' => $request->name,
@@ -40,10 +39,48 @@ class PriceController extends Controller
             if($model->create($data)){
             return redirect('prices')->with('msg', 'Packeges Added Successfully');
           }
-
-
         }
     }
 
+    public function edit(string $id)
+    {
+        $prices = Price::find($id);
+        return view('backend.prices.edit', compact('prices'));
+    }
+
+    public function delete(string $id)
+    {
+        
+        $services = Price::find($id);
+        $services->delete();
+        return redirect('prices')->with('msg', 'Packeges Delete Successfully');
+    }
+
+    public function update(Request $request, string $id)
+    {
+        $validate = $request->validate([
+            'name' => 'required | min:4',
+            'price' => 'required',
+            'description' => 'required | min:6',
+        ]);
+
+        if($validate){
+            $data = [
+                'name' => $request->name,
+                'price' => $request->price,
+                'description' => $request->description,
+            ];
+
+
+            $model = new Price();       
+            if($model->update($data)){
+            return redirect('prices')->with('msg', 'Packeges Updated Successfully');
+          }
+        }
+    }
+
+    
+
+    
 
 }

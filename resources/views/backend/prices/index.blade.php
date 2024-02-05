@@ -50,6 +50,7 @@
                                         <th>Name</th>
                                         <th>Price</th>
                                         <th>Description</th>                                        
+                                        <th>Action</th>                                        
                                     </tr>
                                 </thead>
                                 <tbody>     
@@ -58,7 +59,12 @@
                                         <td>{{$price->id}}</td>
                                         <td>{{$price->name}}</td>
                                         <td>{{$price->price}}</td>
-                                        <td>{{$price->description}}</td>                                        
+                                        <td>{{$price->description}}</td> 
+                                        <td>
+                                            <button class="btn btn-primary"><a href="{{route('prices.edit', $price->id)}}" class="text-white">Edit</a></button>
+                          | 
+                                            <button class="btn btn-success"><a href="{{route('prices.delete', $price->id)}}" onclick="return confirm('Are You sure to Delete')" class="text-white">Delete</a> </button>
+                                        </td>                                       
                                     </tr>
                                     @endforeach
                                 </tbody>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\backend\DashboardController;
+use App\Http\Controllers\backend\PdfController;
 use App\Http\Controllers\frontend\FrontendController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -75,6 +76,10 @@ Route::delete('remove-from-cart', [FrontendController::class, 'remove'])->name('
 Route::get('checkout', [FrontendController::class, 'checkout'])->name('checkout.page');    
 Route::post('order', [FrontendController::class, 'order'])->name('checkout.order');
 Route::get('reports', [DashboardController::class, 'reports'])->name('reports');
+
+// Invoice
+Route::get('generate-pdf',[PdfController::class,'generate_pdf']);
+Route::get('download-pdf',[PdfController::class,'download_pdf']);
 
 
 require __DIR__.'/auth.php';

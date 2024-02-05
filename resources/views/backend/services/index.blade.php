@@ -50,6 +50,7 @@
                                         <th>Name</th>
                                         <th>Description</th>
                                         <th>Image</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>     
@@ -59,6 +60,11 @@
                                         <td>{{$ser->name}}</td>
                                         <td>{{$ser->description}}</td>
                                         <td><img src="{{ 'images/services/' . $ser->image}}" width="100" alt=""></td>
+                                        <td>
+                                            <button class="btn btn-primary"><a href="{{route('services.edit', $ser->id)}}" class="text-white">Edit</a></button>
+                          | 
+                                            <button class="btn btn-success"><a href="{{route('services.delete', $ser->id)}}" onclick="return confirm('Are You sure to Delete')" class="text-white">Delete</a> </button>
+                                        </td>
                                     </tr>
                                     @endforeach
                                 </tbody>

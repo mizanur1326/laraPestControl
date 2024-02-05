@@ -71,6 +71,16 @@ Route::middleware('auth')->group(function () {
     Route::post('services/store', [ServiceController::class, 'store'])
                 ->name('services.store');
 
+    Route::get('services/edit/{id}', [ServiceController::class, 'edit'])
+                ->name('services.edit');
+
+    Route::post('services/update/{$id}', [ServiceController::class, 'update'])
+                ->name('services.update');
+
+    Route::get('services/delete/{id}', [ServiceController::class, 'delete'])
+                ->name('services.delete');
+
+
                 // Packeges
     Route::get('prices', [PriceController::class, 'index'])
                 ->name('prices.index');
@@ -80,6 +90,15 @@ Route::middleware('auth')->group(function () {
 
     Route::post('prices/store', [PriceController::class, 'store'])
                 ->name('prices.store');
+
+    Route::get('prices/edit/{id}', [PriceController::class, 'edit'])
+                ->name('prices.edit');
+
+    Route::post('prices/update/{$id}', [PriceController::class, 'update'])
+                ->name('prices.update');
+
+    Route::get('prices/delete/{id}', [PriceController::class, 'delete'])
+                ->name('prices.delete');
 
 
     // Orders

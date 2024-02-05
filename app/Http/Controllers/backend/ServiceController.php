@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\backend\Price;
 use App\Models\backend\Service;
 use Illuminate\Http\Request;
 
@@ -71,7 +72,21 @@ class ServiceController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $services = Service::find($id);
+        return view('backend.services.edit', compact('services'));
+    }
+
+
+    public function delete(string $id)
+    {
+        // echo $id;
+
+        // $deleted = DB::table('products')->where('id', $id)->delete();
+        // return redirect('product')->with('msg', 'Product Delete Successfully');
+
+        $services = Service::find($id);
+        $services->delete();
+        return redirect('services')->with('msg', 'Services Delete Successfully');
     }
 
     /**
@@ -79,7 +94,30 @@ class ServiceController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $validate = $request->validate([
+            'name' => 'required | min:4',
+            'description' => 'required | min:6',
+            // 'image' => 'mimes:jpg,jpeg,png',
+        ]);
+
+        // $filename = time(). "." . $request->image->extension();
+
+        if($validate){
+            $data = [
+                'name' => $request->name,
+                'description' => $request->description,
+                // 'image'=> $filename,
+            ];
+
+
+            $model = new Service();       
+            if($model->update($data)){
+            // $request->image->move('images/services/', $filename);    
+            return redirect('services')->with('msg', 'Service Updated Successfully');
+          }
+
+        }
+
     }
 
     /**
