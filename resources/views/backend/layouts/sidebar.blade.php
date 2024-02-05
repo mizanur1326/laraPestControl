@@ -45,7 +45,36 @@
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {{ request()->is('reports') ? 'active' : '' }}" href="{{url('reports')}}"><i class="fa fa-fw fa-user-circle"></i>Reports</a>
+                                <a class="nav-link {{ request()->is('reports') ? 'active' : '' }}" href="{{url('reports')}}"><i class="fa fa-fw fa-user-circle"></i>Order & Sale Reports</a><br><br>
+                            </li>
+                            
+                            <li class="nav-item">
+                                {{-- <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-6" aria-controls="submenu-6"><i class="fas fa-fw fa-file"></i>Web Pages </a> --}}
+                                <li class="nav-divider">
+                                    Web Pages 
+                                </li>
+                                <div id="submenu-6" class="" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/">Home</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/about">About</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/ourservices">Services</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/blog">Blog</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/packege">Packeges</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/contact">Contact</a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </li>
                             {{-- <li class="nav-item ">
                                 <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4"><i class="fab fa-fw fa-wpforms"></i>Forms</a>

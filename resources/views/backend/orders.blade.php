@@ -18,6 +18,7 @@
                     <table id="example" class="table table-striped table-bordered second" style="width:100%">
                         <thead>
                             <tr>
+                                <th>SL</th>
                                 <th>Order Number</th>
                                 <th>Product Name</th>
                                 <th>Quantity</th>
@@ -31,6 +32,7 @@
                         <tbody>
                             @foreach($orders as $order)                               
                                 <tr>
+                                    <td>{{$order->id}}</td>
                                     <td>{{$order->order_number}}</td>
                                     <td>{{$order->productName}}</td>
                                     <td>{{$order->quantity}}</td>                                    
