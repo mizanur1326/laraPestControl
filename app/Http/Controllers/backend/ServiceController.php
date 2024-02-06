@@ -92,33 +92,48 @@ class ServiceController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
-    {
-        $validate = $request->validate([
-            'name' => 'required | min:4',
-            'description' => 'required | min:6',
-            // 'image' => 'mimes:jpg,jpeg,png',
-        ]);
+    public function update(Request $request, $id)
+{
+    $validate = $request->validate([
+        'name' => 'required|min:4',
+        'description' => 'required|min:6',
+        'image' => 'mimes:jpg,jpeg,png',
+    ]);
 
-        // $filename = time(). "." . $request->image->extension();
+    $service = Service::find($id);
 
-        if($validate){
-            $data = [
-                'name' => $request->name,
-                'description' => $request->description,
-                // 'image'=> $filename,
-            ];
-
-
-            $model = new Service();       
-            if($model->update($data)){
-            // $request->image->move('images/services/', $filename);    
-            return redirect('services')->with('msg', 'Service Updated Successfully');
-          }
-
-        }
-
+    if (!$service) {
+        return redirect('services')->with('error', 'Service not found');
     }
+
+    $filename = $service->image;
+
+    if ($request->hasFile('image')) {
+        // If a new image is provided, update the filename
+        $filename = time() . "." . $request->image->extension();
+        $request->image->move('images/services/', $filename);
+
+        // Delete the old image file if it exists
+        if (file_exists('images/services/' . $service->image)) {
+            unlink('images/services/' . $service->image);
+        }
+    }
+
+    if ($validate) {
+        $data = [
+            'name' => $request->name,
+            'description' => $request->description,
+            'image' => $filename,
+        ];
+
+        if ($service->update($data)) {
+            return redirect('services')->with('msg', 'Service updated successfully');
+        } else {
+            return redirect('services')->with('error', 'Failed to update service');
+        }
+    }
+}
+
 
     /**
      * Remove the specified resource from storage.

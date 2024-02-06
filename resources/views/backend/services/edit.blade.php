@@ -48,7 +48,7 @@
                                             @endforeach
                                             </div>
                                         @endif
-                                        <form method="POST" action="{{ route('services.store', $services->id) }}" enctype="multipart/form-data">
+                                        <form method="POST" action="{{ route('services.update', $services->id) }}" enctype="multipart/form-data">
                                             @csrf
                                             <div class="form-group">
                                                 <label for="inputText3"  class="col-form-label">Service Name</label>

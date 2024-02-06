@@ -77,7 +77,7 @@
                             <div class="card-body">
                                 <h5 class="text-muted">Revenue</h5>
                                 <div class="metric-value d-inline-block">
-                                    <h1 class="mb-1 text-primary">{{$totalRevenue}}</h1>
+                                    <h1 class="mb-1 text-primary">${{$totalRevenue}}</h1>
                                 </div>
                                 <div><a href="/orders" class="btn btn-primary">View Orders</a></div>
                             </div>

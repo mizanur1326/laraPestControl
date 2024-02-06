@@ -74,7 +74,7 @@ Route::middleware('auth')->group(function () {
     Route::get('services/edit/{id}', [ServiceController::class, 'edit'])
                 ->name('services.edit');
 
-    Route::post('services/update/{$id}', [ServiceController::class, 'update'])
+    Route::post('services/update/{id}', [ServiceController::class, 'update'])
                 ->name('services.update');
 
     Route::get('services/delete/{id}', [ServiceController::class, 'delete'])
