@@ -78,7 +78,7 @@ Route::post('order', [FrontendController::class, 'order'])->name('checkout.order
 Route::get('reports', [DashboardController::class, 'reports'])->name('reports');
 
 // Invoice
-Route::get('generate-pdf',[PdfController::class,'generate_pdf']);
+Route::get('invoice',[PdfController::class,'generate_pdf']);
 Route::get('download-pdf',[PdfController::class,'download_pdf']);
 
 

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{$title}}</title>
+    <title></title>
     <style>
         * {font-family: 'Roboto', sans-serif;line-height: 26px;font-size: 15px}
         .custom--table {width: 100%;color: inherit;vertical-align: top;font-weight: 400;border-collapse: collapse;border-bottom: 2px solid #ddd;margin-top: 0;}
@@ -56,7 +56,9 @@
         <div class="invoice-details">
             <div class="invoice-details-flex">
                 <div class="invoice-single-details">
-                    <h2 class="invoice-details-title">Bill To: {{ $title }}</h2>
+                    @foreach($orders as $order)
+                        <h2 class="invoice-details-title">Bill To:{{ $order->customerName }}</h2>
+                    @endforeach
                     <ul class="details-list">
                         <li class="list">Nazmul Hoque</li>
                         <li class="list"> <a href="#">nazmul@gmail.com </a> </li>
