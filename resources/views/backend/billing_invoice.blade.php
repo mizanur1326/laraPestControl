@@ -57,13 +57,13 @@
             <div class="invoice-details-flex">
                 <div class="invoice-single-details">
                     @foreach($orders as $order)
-                        <h2 class="invoice-details-title">Bill To:{{ $order->customerName }}</h2>
-                    @endforeach
+                    <h2 class="invoice-details-title">Bill To:{{ $order->customerName }}</h2>
                     <ul class="details-list">
-                        <li class="list">Nazmul Hoque</li>
-                        <li class="list"> <a href="#">nazmul@gmail.com </a> </li>
-                        <li class="list"> <a href="#"> 0167846483</a> </li>
+                        <li class="list">{{ $order->customerName }}</li>
+                        <li class="list"> <a href="#">{{ $order->email }} </a> </li>
+                        <li class="list"> <a href="#"> {{ $order->phone }}</a> </li>
                     </ul>
+                    @endforeach
                 </div>
                 <div class="invoice-single-details">
                     <h4 class="invoice-details-title">Ship To:</h4>

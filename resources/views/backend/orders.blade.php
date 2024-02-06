@@ -26,6 +26,7 @@
                                 <th>Customer Name</th>
                                 <th>Phone No</th>
                                 <th>Address</th>
+                                <th>Invoices</th>
                                 <th>Status</th>
                             </tr>
                         </thead>
@@ -40,6 +41,7 @@
                                     <td>{{$order->customerName}}</td>                                    
                                     <td>{{$order->phone}}</td>                                    
                                     <td>{{$order->address}}</td>                                    
+                                    <td><a href="{{url('invoice')}}" target="_blank" class="btn btn-dark">Invoice</a></td>                                    
                                      
                                     <td>
                                         @if (!$order->status==0)
