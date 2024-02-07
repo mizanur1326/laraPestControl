@@ -10,9 +10,9 @@ use Illuminate\Http\Request;
 
 class PdfController extends Controller
 {
-    public function generate_pdf()
+    public function generate_pdf($order_number)
     {        
-        $orders = Order::all();
+        $orders = Order::all()->where('order_number', $order_number);
         // $data = [
         //     'title' => "Invoice of PESTKIT",
         //     'date' => date('m/d/Y'),

@@ -1,10 +1,17 @@
 {
     "roboto": {
-        "300_italic": "E:\\Mizanur Rahman\\WDPF\\XAMPP_8.2.12\\htdocs\\laraPestControl\\storage\\fonts\/roboto_300_italic_3d719d848a0b6b3f4f0918985ffd2db7",
-        "300": "E:\\Mizanur Rahman\\WDPF\\XAMPP_8.2.12\\htdocs\\laraPestControl\\storage\\fonts\/roboto_300_32acfcb296f555e063ebba2be7db9e2f",
-        "normal": "E:\\Mizanur Rahman\\WDPF\\XAMPP_8.2.12\\htdocs\\laraPestControl\\storage\\fonts\/roboto_normal_7bc701b343c10631f60048716b96e4f7",
-        "500": "E:\\Mizanur Rahman\\WDPF\\XAMPP_8.2.12\\htdocs\\laraPestControl\\storage\\fonts\/roboto_500_5774d6fb05eba3d096525f821dbe4137",
-        "bold": "E:\\Mizanur Rahman\\WDPF\\XAMPP_8.2.12\\htdocs\\laraPestControl\\storage\\fonts\/roboto_bold_8db5cb5d0586c1e891426d13097b1d04",
-        "900": "roboto_900_7bf41cacaff90e7097ddd49fb9296601"
+        "300_italic": "F:\\Mizanur_Rahman_1277622\\XAMPP_8.2.12\\htdocs\\laravelPestControl\\storage\\fonts\/roboto_300_italic_3d719d848a0b6b3f4f0918985ffd2db7",
+        "300": "F:\\Mizanur_Rahman_1277622\\XAMPP_8.2.12\\htdocs\\laravelPestControl\\storage\\fonts\/roboto_300_32acfcb296f555e063ebba2be7db9e2f",
+        "normal": "F:\\Mizanur_Rahman_1277622\\XAMPP_8.2.12\\htdocs\\laravelPestControl\\storage\\fonts\/roboto_normal_7bc701b343c10631f60048716b96e4f7",
+        "500": "F:\\Mizanur_Rahman_1277622\\XAMPP_8.2.12\\htdocs\\laravelPestControl\\storage\\fonts\/roboto_500_5774d6fb05eba3d096525f821dbe4137",
+        "bold": "roboto_bold_8db5cb5d0586c1e891426d13097b1d04",
+        "900": "F:\\Mizanur_Rahman_1277622\\XAMPP_8.2.12\\htdocs\\laravelPestControl\\storage\\fonts\/roboto_900_7bf41cacaff90e7097ddd49fb9296601"
+    },
+    "font awesome 5 brands": {
+        "normal": "font_awesome_5_brands_normal_3e1732d8dab27056b97efa93f3e1f178"
+    },
+    "font awesome 5 free": {
+        "normal": "F:\\Mizanur_Rahman_1277622\\XAMPP_8.2.12\\htdocs\\laravelPestControl\\storage\\fonts\/font_awesome_5_free_normal_779ce99e8ef4d0d99f03154868ece018",
+        "900": "font_awesome_5_free_900_fb86e7a3a54c1b4cf8b998dad978ff9a"
     }
 }

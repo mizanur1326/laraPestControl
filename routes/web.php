@@ -79,6 +79,7 @@ Route::get('reports', [DashboardController::class, 'reports'])->name('reports');
 
 // Invoice
 Route::get('invoice',[PdfController::class,'generate_pdf']);
+Route::get('invoice/{order_number}',[PdfController::class,'generate_pdf'])->name('invoiceperid');
 Route::get('download-pdf',[PdfController::class,'download_pdf']);
 
 

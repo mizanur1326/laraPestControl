@@ -43,7 +43,7 @@
         .single-footer {display: flex;align-items: center;gap: 10px}
         .single-footer .icon {display: flex;align-items: center;justify-content: center;height: 30px;width: 30px;font-size: 16px;background-color: #000e8f;color: #fff}
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300&display=swap" rel="stylesheet">
+
 </head>
 <body>
 
@@ -51,37 +51,32 @@
 <div class="invoice-area">
     <div class="invoice-wrapper">
         <div class="invoice-header">
+            {{-- <img src="{{asset('backend/assets/images/logo.png')}}" alt=""> --}}        
+
             <h1 class="invoice-title" style="text-align:center;">Invoice - PESTKIT</h1>
         </div>
         <div class="invoice-details">
             <div class="invoice-details-flex">
                 <div class="invoice-single-details">
                     @foreach($orders as $order)
-                    <h2 class="invoice-details-title">Bill To:{{ $order->customerName }}</h2>
+                    <h2 class="invoice-details-title">Ship To: {{ $order->customerName }}</h2>
                     <ul class="details-list">
-                        <li class="list">{{ $order->customerName }}</li>
-                        <li class="list"> <a href="#">{{ $order->email }} </a> </li>
-                        <li class="list"> <a href="#"> {{ $order->phone }}</a> </li>
-                    </ul>
-                    @endforeach
+                        {{-- <li class="list">{{ $order->customerName }}</li> --}}
+                        <li class="list">Email:  {{ $order->email }} </li>
+                        <li class="list">Phone: {{ $order->phone }} </li>
+                        <li class="list">Address: {{ $order->address }}</li>
+                    </ul>                   
                 </div>
-                <div class="invoice-single-details">
-                    <h4 class="invoice-details-title">Ship To:</h4>
-                    <ul class="details-list">
-                        <li class="list"> <strong>City: </strong> Dhaka</li>
-                        <li class="list"> <strong>Area: </strong>Dhanmondi</li>
-                        <li class="list"> <strong>Address: </strong>West Panthapath, Dhanmondi</li>
-                    </ul>
-                </div>
+                @endforeach
             </div>
         </div>
 
         <div class="item-description">
-            <h5 class="table-title">Include Services</h5>
+            <h5 class="table-title">Order Details</h5>
             <table class="custom--table">
                 <thead>
                 <tr>
-                    <th>Title</th>
+                    <th>Packege Name</th>
                     <th>Unit Price</th>
                     <th>Quantity</th>
                     <th>Total</th>
@@ -108,7 +103,7 @@
             </table>
         </div>
 
-        <div class="item-description">
+        {{-- <div class="item-description">
             <div class="table-responsive">
                 <h5 class="table-title">Orders Details</h5>
                 <table class="custom--table">
@@ -142,7 +137,7 @@
                     </tbody>
                 </table>
             </div>
-        </div>
+        </div> --}}
 
         <footer>
             <h3 style="text-align: center">

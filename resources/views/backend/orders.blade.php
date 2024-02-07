@@ -41,7 +41,7 @@
                                     <td>{{$order->customerName}}</td>                                    
                                     <td>{{$order->phone}}</td>                                    
                                     <td>{{$order->address}}</td>                                    
-                                    <td><a href="{{url('invoice')}}" target="_blank" class="btn btn-dark">Invoice</a></td>                                    
+                                    <td><a href="{{url('invoice/'. $order->order_number) }}" target="_blank" class="btn btn-dark">Invoice</a></td>                                    
                                      
                                     <td>
                                         @if (!$order->status==0)
