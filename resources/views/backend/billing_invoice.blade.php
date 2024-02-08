@@ -40,7 +40,7 @@
         .invoice-total {padding-top: 10px}
         .invoice-flex-footer {display: flex;align-items: flex-start;justify-content: space-between;flex-wrap: wrap;gap: 30px;}
         .single-footer-item {flex: 1}
-        .single-footer {display: flex;align-items: center;gap: 10px}
+        .single-footer {display: flex;align-items: center;gap: 10px} 
         .single-footer .icon {display: flex;align-items: center;justify-content: center;height: 30px;width: 30px;font-size: 16px;background-color: #000e8f;color: #fff}
     </style>
 
@@ -51,7 +51,7 @@
 <div class="invoice-area">
     <div class="invoice-wrapper">
         <div class="invoice-header">
-            {{-- <img src="{{asset('backend/assets/images/logo.png')}}" alt=""> --}}        
+            {{-- <img src="{{ public_path('backend/assets/images/logo.png')}}" alt="not found"> --}}
 
             <h1 class="invoice-title" style="text-align:center;">Invoice - PESTKIT</h1>
         </div>
@@ -67,7 +67,7 @@
                         <li class="list">Address: {{ $order->address }}</li>
                     </ul>                   
                 </div>
-                @endforeach
+                {{-- @endforeach --}}
             </div>
         </div>
 
@@ -84,22 +84,19 @@
                 </thead>
                 <tbody>
                 <tr>
-                    <td>House Cleaning</td>
-                    <td>$10</td>
-                    <td>3</td>
-                    <td>$30</td>
+                    <td>{{$order->productName}}</td>
+                    <td>${{$order->total_amount}}</td>
+                    <td>{{$order->quantity}}</td>
+                    <td>${{$order->total_amount}}</td>
                 </tr>
                 <tr>
-                    <td>Car Cleaning</td>
-                    <td>$20</td>
-                    <td>2</td>
-                    <td>$40</td>
-                </tr>
-                <tr class="table_footer_row">
-                    <td colspan="3"><strong>Package Fee</strong></td>
-                    <td><strong>$70</strong></td>
+                    <th>Total Bill</th>
+                    <th></th>
+                    <th></th>
+                    <td style="font-weight: bold">${{$order->total_amount}}</td>
                 </tr>
                 </tbody>
+                @endforeach
             </table>
         </div>
 
