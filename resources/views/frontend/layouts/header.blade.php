@@ -68,6 +68,20 @@
                         </i>
                     </a>
 
+                    <span>
+                        @auth('customer')
+                        {{ Auth::guard('customer')->user()->name }}
+                        <form method="POST" action="{{ route('customer.logout') }}">
+                            @csrf
+                            <button type="submit" class="btn btn-danger">
+                                Logout
+                            </button>
+                        </form>
+                    @else
+                        <a href="/customer/login"> Log In </a>
+                    @endauth
+                    </span>
+
 
                 </div>
             </div>

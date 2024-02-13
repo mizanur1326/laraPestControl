@@ -79,7 +79,7 @@
                                         <tr>
                                             <td style="font-weight: 700">{{ $details['name'] }}</td>
                                             <td style="font-weight: 700">{{ $details['price'] }}</td>
-                                            <td style="font-weight: 700">{{ $details['quantity'] }}</td>
+                                            <td style="font-weight: 700">{{ $details['quantity']   }}</td>
                                             <td style="font-weight: 700">{{ $details['price']  * $details['quantity'] }}</td>
                                             @php $productName =  $details['name']; @endphp
                                             @php $subquantity +=  $details['quantity']; @endphp

@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 class CustomerController extends Controller
 {
     public function index(){
-        return view('backend.customer.login');
+        return view('frontend.login');
     }
 
 
@@ -16,7 +16,7 @@ class CustomerController extends Controller
         // dd($request->all()) ;
         if(Auth::guard('customer')->attempt(['email'=>$request->email,
         "password"=>$request->password])){
-            return redirect()->route('customer.dashboard');
+            return redirect('/');
         } else {
             return redirect()->route('customer-login');
         }
