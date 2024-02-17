@@ -68,8 +68,8 @@
                         </i>
                     </a>
 
-                    <span>
-                        @auth('customer')
+                    <span class="nav-item nav-link">
+                    @auth('customer')
                         {{ Auth::guard('customer')->user()->name }}
                         <form method="POST" action="{{ route('customer.logout') }}">
                             @csrf
@@ -78,7 +78,7 @@
                             </button>
                         </form>
                     @else
-                        <a href="/customer/login"> Log In </a>
+                        <a href="/customer/login"> <i class="fa-solid fa-user" style="color: #FFD43B;"></i> </a>
                     @endauth
                     </span>
 
