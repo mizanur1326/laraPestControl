@@ -105,7 +105,6 @@
                         <a href="/customer/login"> <i class="fa-solid fa-user" style="color: #FFD43B;"></i> </a>
                     @endauth
                     </span>                   
-
                 </div>
             </div>
         </nav>
