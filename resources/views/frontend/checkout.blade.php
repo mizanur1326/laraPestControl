@@ -34,7 +34,7 @@
                                 <div class="row">
                                     <div class="col-sm-12">
                                         <label>Name *</label>
-                                        <input type="text" class="form-control" name="customerName">
+                                        <input type="text" class="form-control" name="customerName" value="">
                                     </div>
 
                                 </div>
@@ -74,7 +74,7 @@
                                     <tbody>
                                         @php $subtotal = 0 @endphp
                                         @php $subquantity = 0 @endphp                                        
-                                        @if(session('cart'))
+                                        @if(session('cart'))                                                                                
                                         @foreach(session('cart') as $id => $details)
                                         <tr>
                                             <td style="font-weight: 700">{{ $details['name'] }}</td>

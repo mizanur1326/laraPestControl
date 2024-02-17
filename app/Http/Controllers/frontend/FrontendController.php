@@ -103,8 +103,12 @@ class FrontendController extends Controller
         }
     }
 
-    public function checkout(){
+    public function checkout(Request $request){
+
+        // $data = $request->session()->all();
+
         return view('frontend.checkout');
+
     }
 
     public function order(Request $request){
