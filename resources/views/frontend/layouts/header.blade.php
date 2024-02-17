@@ -68,7 +68,7 @@
                         </i>
                     </a>
 
-                    <span class="nav-item nav-link">
+                    {{-- <span class="nav-item nav-link">
                     @auth('customer')
                         {{ Auth::guard('customer')->user()->name }}
                         <form method="POST" action="{{ route('customer.logout') }}">
@@ -80,8 +80,31 @@
                     @else
                         <a href="/customer/login"> <i class="fa-solid fa-user" style="color: #FFD43B;"></i> </a>
                     @endauth
-                    </span>
+                    </span> --}}
 
+                    <span class="nav-item nav-link">
+                    @auth('customer')                                              
+                        <li class="nav-item dropdown nav-user"> 
+                            {{-- remove  <nav-link> class from li --}}
+                            <a class="" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa-solid fa-user" style="color: #FFD43B;"></i></a>
+                            <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
+                                <div class="nav-user-info">
+                                    <h5 class="mb-0 text-dark nav-user-name">{{ Auth::guard('customer')->user()->name }}</h5>
+                                </div>
+                                <a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>My Orders</a>
+                                <a class="dropdown-item" href="#"><i class="fas fa-cog mr-2"></i>Setting</a>
+                                <form method="POST" action="{{ route('customer.logout') }}">
+                                    @csrf
+                                    <button type="submit" class="btn btn-danger">
+                                        Logout
+                                    </button>
+                                </form>
+                            </div>
+                        </li>
+                    @else
+                        <a href="/customer/login"> <i class="fa-solid fa-user" style="color: #FFD43B;"></i> </a>
+                    @endauth
+                    </span>                   
 
                 </div>
             </div>
