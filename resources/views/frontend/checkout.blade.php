@@ -32,14 +32,16 @@
                         <div class="col-lg-6">
                             <h2 class="checkout-title">Billing Details</h2><!-- End .checkout-title -->
                                 <div class="row">
+                                    <div class="col-sm-12">                                        
+                                        <input type="hidden" class="form-control" name="customerName" value="{{ Auth::guard('customer')->user()->id }}">
+                                    </div>
                                     <div class="col-sm-12">
                                         <label>Name *</label>
-                                        <input type="text" class="form-control" name="customerName" value="">
+                                        <input type="text" class="form-control" name="customerName" value="{{ Auth::guard('customer')->user()->name }}">
                                     </div>
-
                                 </div>
                                 <label>Email address *</label>
-                                <input type="email" class="form-control" name="email">
+                                <input type="email" class="form-control" name="email" value="{{ Auth::guard('customer')->user()->email }}" disabled>
 
                                 <label>Phone Number *</label>
                                 <input type="text" class="form-control" name="phone">

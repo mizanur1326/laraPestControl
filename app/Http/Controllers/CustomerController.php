@@ -18,7 +18,7 @@ class CustomerController extends Controller
         "password"=>$request->password])){
             return redirect('/');
         } else {
-            return redirect()->route('customer-login');
+            return redirect()->route('customer.login');
         }
     }
 

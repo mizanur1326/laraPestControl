@@ -83,8 +83,8 @@ Route::get('invoice',[PdfController::class,'generate_pdf']);
 Route::get('invoice/{order_number}',[PdfController::class,'generate_pdf'])->name('invoiceperid');
 Route::get('download-pdf',[PdfController::class,'download_pdf']);
 
-
-
+// My Orders
+Route::get('myorders', [FrontendController::class, 'myOrder'])->name('myorders');
 
 // Customer
 Route::get('customer/login', [CustomerController::class, 'index'])->name('customer_login_form');

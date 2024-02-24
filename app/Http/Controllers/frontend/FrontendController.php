@@ -7,6 +7,7 @@ use App\Models\backend\Price;
 use App\Models\backend\Service;
 use App\Models\Order;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class FrontendController extends Controller
 {
@@ -134,6 +135,16 @@ class FrontendController extends Controller
         //  $order_data['coupon'] = '100';
         //  $order_data['shipping_id'] = '15';
         //  $order->fill($order_data);
+     }
+
+     public function myOrder(){
+        // $orders = Order::all();
+        $customer_id = Auth::guard('customer')->user()->id;
+        // $product = Order::where('student_id', $student_id)->get();
+        $orders = Order::where('customer_id', $customer_id)->get();
+        // ->where('status', 0)
+        
+        return view( 'frontend.myorders', compact('orders') );
      }
 
 
