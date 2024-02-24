@@ -25,6 +25,7 @@ return new class extends Migration
             // $table->string('payment_status');
             // $table->string('status');
             $table->string('customerName');
+            $table->string('customer_id');
             $table->string('email');
             $table->string('phone');
             $table->string('country');

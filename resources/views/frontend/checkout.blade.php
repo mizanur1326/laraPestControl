@@ -33,7 +33,7 @@
                             <h2 class="checkout-title">Billing Details</h2><!-- End .checkout-title -->
                                 <div class="row">
                                     <div class="col-sm-12">                                        
-                                        <input type="hidden" class="form-control" name="customerName" value="{{ Auth::guard('customer')->user()->id }}">
+                                        <input type="hidden" class="form-control" name="customer_id" value="{{ Auth::guard('customer')->user()->id }}">
                                     </div>
                                     <div class="col-sm-12">
                                         <label>Name *</label>
@@ -41,13 +41,13 @@
                                     </div>
                                 </div>
                                 <label>Email address *</label>
-                                <input type="email" class="form-control" name="email" value="{{ Auth::guard('customer')->user()->email }}" disabled>
+                                <input type="email" class="form-control" name="email" value="{{ Auth::guard('customer')->user()->email }}" >
 
                                 <label>Phone Number *</label>
-                                <input type="text" class="form-control" name="phone">
+                                <input type="text" class="form-control" name="phone" value="{{ Auth::guard('customer')->user()->phone }}">
 
                                 <label>Street address *</label>
-                                <input type="text" class="form-control" placeholder="House number and Street name"  name="address">                              
+                                <input type="text" class="form-control" placeholder="House number and Street name"  name="address" value="{{ Auth::guard('customer')->user()->address }}">                              
                                 
                                 
                                 <label>Order notes (optional)</label>
@@ -74,7 +74,7 @@
                                     </thead>
 
                                     <tbody>
-                                        @php $subtotal = 0 @endphp
+                                        @php $subtotal = 0 @endphp                                        
                                         @php $subquantity = 0 @endphp                                        
                                         @if(session('cart'))                                                                                
                                         @foreach(session('cart') as $id => $details)
@@ -104,6 +104,7 @@
                                         <input type="hidden" name="quantity" value="{{ $subquantity }}">
                                         <input type="hidden" name="sub_total" value="{{ $subtotal }}">
                                         <input type="hidden" name="total_amount" value="{{ $subtotal }}">
+                                        <input type="hidden" name="customer_id" value="{{ Auth::guard('customer')->user()->id }}">
                                         </tr>
                                         @endif
                                     </tbody>
