@@ -6,7 +6,7 @@
 
 
 
-<section class="section" style="width: 50%; margin: 5% auto">
+<section class="section" style="width: 80%; margin: 5% auto">
     <div class="row">
       <div class="col-lg-12">
         <div class="card">

@@ -91,7 +91,7 @@
                                 <div class="nav-user-info">
                                     <h5 class="mb-0 text-dark nav-user-name">{{ Auth::guard('customer')->user()->name }}</h5>
                                 </div>
-                                <a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>My Orders</a>
+                                <a class="dropdown-item" href="{{ route('myorders') }}"><i class="fas fa-user mr-2"></i>My Orders</a>
                                 <a class="dropdown-item" href="#"><i class="fas fa-cog mr-2"></i>Setting</a>
                                 <form method="POST" action="{{ route('customer.logout') }}">
                                     @csrf
