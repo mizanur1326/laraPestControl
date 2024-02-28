@@ -35,7 +35,7 @@
     <div class="splash-container">
         <h1> Customer Login </h1>
         <div class="card ">
-            <div class="card-header text-center"><a href="{{url('login')}}"><img class="logo-img" src="{{asset('backend/assets/images/logo.png')}}" alt="logo"></a></div>
+            <div class="card-header text-center"><a href="/"><img class="logo-img" src="{{asset('backend/assets/images/logo.png')}}" alt="logo"></a></div>
             <div class="card-body">
                 @if ($errors->any())
                 <div class="alert alert-danger">

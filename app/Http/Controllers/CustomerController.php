@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Customer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class CustomerController extends Controller
 {
@@ -15,8 +17,28 @@ class CustomerController extends Controller
         return view('frontend.register');
     }
 
-    public function registerStore(Request $request){
-        
+    public function userStore(Request $request){
+        $request->validate([
+            'name' => 'required|string|max:100',
+            'phone' => 'required|string|max:50',
+            'address' => 'required|string|max:150',
+            'email' => 'required|email|max:50',
+            'password' => 'required|min:8'
+        ]);
+            // dd($request);
+        Customer::create([
+            'name' => $request->name,
+            'phone' => $request->phone,
+            'address' => $request->address,
+            'email' => $request->email,
+            'password' => Hash::make($request->password)
+        ]);
+
+        // $credentials = $request->only('email', 'password');
+        // Auth::attempt($credentials);
+        // $request->session()->regenerate();
+        return redirect()->route('customer_login_form')
+        ->withSuccess('You have successfully registered');
     }
 
 
@@ -47,6 +69,6 @@ class CustomerController extends Controller
 
         // $request->session()->regenerateToken();
 
-        return redirect('customer/login');
+        return redirect('/');
     }
 }

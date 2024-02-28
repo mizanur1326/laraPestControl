@@ -97,7 +97,7 @@ Route::get('customer/dashboard', [CustomerController::class, 'dashboard'])->name
 
 // Customer Registration
 Route::get('registerUser', [CustomerController::class, 'registerUser'])->name('registeruser');
-
+Route::post('userStore', [CustomerController::class, 'userStore'])->name('customer.store');
 
 
 

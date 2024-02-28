@@ -22,7 +22,7 @@
         display: flex;
         -ms-flex-align: center;
         align-items: center;
-        padding-top: 40px;
+        /* padding-top: 40px; */
         padding-bottom: 40px;
     }
     </style>
@@ -35,7 +35,7 @@
     <div class="splash-container">
         <h1> Customer Register </h1>
         <div class="card ">
-            <div class="card-header text-center"><a href=""><img class="logo-img" src="{{asset('backend/assets/images/logo.png')}}" alt="logo"></a></div>
+            <div class="card-header text-center"><a href="/"><img class="logo-img" src="{{asset('backend/assets/images/logo.png')}}" alt="logo"></a></div>
             <div class="card-body">
                 @if ($errors->any())
                 <div class="alert alert-danger">
@@ -46,10 +46,10 @@
                     </ul>
                 </div>                       
             @endif
-                <form method="POST" action="">
+                <form method="POST" action="{{route('customer.store')}}">
                     @csrf
                     <div class="form-group">
-                        <input class="form-control form-control-lg" name="name" id="username" type="text" placeholder="Name" autocomplete="off">
+                        <input class="form-control form-control-lg" name="name" id="name" type="text" placeholder="Name" autocomplete="off">
                     </div>
                     <div class="form-group">
                         <input class="form-control form-control-lg" name="phone" id="phone" type="text" placeholder="Phone" autocomplete="off">
@@ -58,7 +58,7 @@
                         <input class="form-control form-control-lg" name="address" id="address" type="text" placeholder="address" autocomplete="off">
                     </div>
                     <div class="form-group">
-                        <input class="form-control form-control-lg" name="email" id="email" type="text" placeholder="Username" autocomplete="off">
+                        <input class="form-control form-control-lg" name="email" id="email" type="text" placeholder="email" autocomplete="off">
                     </div>
                     <div class="form-group">
                         <input class="form-control form-control-lg" name="password" id="password" type="password" placeholder="Password">
