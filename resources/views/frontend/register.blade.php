@@ -33,9 +33,9 @@
     <!-- login page  -->
     <!-- ============================================================== -->
     <div class="splash-container">
-        <h1> Customer Login </h1>
+        <h1> Customer Register </h1>
         <div class="card ">
-            <div class="card-header text-center"><a href="{{url('login')}}"><img class="logo-img" src="{{asset('backend/assets/images/logo.png')}}" alt="logo"></a></div>
+            <div class="card-header text-center"><a href=""><img class="logo-img" src="{{asset('backend/assets/images/logo.png')}}" alt="logo"></a></div>
             <div class="card-body">
                 @if ($errors->any())
                 <div class="alert alert-danger">
@@ -46,10 +46,19 @@
                     </ul>
                 </div>                       
             @endif
-                <form method="POST" action="{{ route('customer.login') }}">
+                <form method="POST" action="">
                     @csrf
                     <div class="form-group">
-                        <input class="form-control form-control-lg" name="email" id="username" type="text" placeholder="Username" autocomplete="off">
+                        <input class="form-control form-control-lg" name="name" id="username" type="text" placeholder="Name" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control form-control-lg" name="phone" id="phone" type="text" placeholder="Phone" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control form-control-lg" name="address" id="address" type="text" placeholder="address" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control form-control-lg" name="email" id="email" type="text" placeholder="Username" autocomplete="off">
                     </div>
                     <div class="form-group">
                         <input class="form-control form-control-lg" name="password" id="password" type="password" placeholder="Password">
@@ -59,12 +68,12 @@
                             <input class="custom-control-input" type="checkbox"><span class="custom-control-label">Remember Me</span>
                         </label>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Register Now</button>
                 </form>
             </div>
             <div class="card-footer bg-white p-0  ">
                 <div class="card-footer-item card-footer-item-bordered">
-                    <a href="{{url('registerUser')}}" class="footer-link">Create An Account</a></div>
+                    <a href="{{url('customer/login')}}" class="footer-link">Login Now</a></div>
                 <div class="card-footer-item card-footer-item-bordered">
                     <a href="#" class="footer-link">Forgot Password</a>
                 </div>

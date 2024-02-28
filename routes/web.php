@@ -95,6 +95,9 @@ Route::post('customer/logout', [CustomerController::class, 'destroy'])->name('cu
 Route::get('customer/dashboard', [CustomerController::class, 'dashboard'])->name('customer.dashboard')->middleware('customer');
 
 
+// Customer Registration
+Route::get('registerUser', [CustomerController::class, 'registerUser'])->name('registeruser');
+
 
 
 

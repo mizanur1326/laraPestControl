@@ -11,6 +11,15 @@ class CustomerController extends Controller
         return view('frontend.login');
     }
 
+    public function registerUser(){
+        return view('frontend.register');
+    }
+
+    public function registerStore(Request $request){
+        
+    }
+
+
 
     public function login(Request $request ){
         // dd($request->all()) ;
